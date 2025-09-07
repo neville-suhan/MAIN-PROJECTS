@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Food Recommendation System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f8f9fa; font-family: Arial, sans-serif; }
+        .container { max-width: 800px; margin-top: 30px; }
+        .output-box {
+            background: white; 
+            border: 1px solid #ddd;
+            padding: 15px; 
+            height: 350px; 
+            overflow-y: auto; 
+            border-radius: 10px;
+        }
+        .btn { border-radius: 8px; }
+        .header { font-size: 24px; font-weight: bold; margin-bottom: 20px; text-align: center; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">🍽️ Food Recommendation System</div>
+
+    <!-- Form -->
+    <form method="POST" class="mb-3">
+        <div class="row g-2 align-items-center mb-2">
+            <div class="col-sm-4">
+                <label class="form-label">Select Category:</label>
+                <select class="form-select" name="category_dropdown">
+                    <option value="">-- Choose --</option>
+                    <option value="Indian">Indian</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Italian">Italian</option>
+                </select>
+            </div>
+            <div class="col-sm-4">
+                <label class="form-label">Or type category:</label>
+                <input type="text" class="form-control" name="category_text" placeholder="e.g. Indian">
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <button type="submit" name="recommend" class="btn btn-success">Get Recommendations</button>
+            <button type="submit" name="all" class="btn btn-primary">Show All Foods</button>
+        </div>
+    </form>
+
+    <!-- Output -->
+    <div class="output-box">
+        {% if message %}
+            <h5>{{ message }}</h5>
+            <hr>
+        {% endif %}
+        
+        {% if results %}
+            <ul>
+                {% for row in results %}
+                    {% if row|length == 4 %}
+                        <li>
+                            <b>{{ row[1] }}</b> ({{ row[0] }} cuisine) <br>
+                            📝 {{ row[2] }} <br>
+                            ⭐ Rating: {{ row[3] }}/5
+                        </li><br>
+                    {% else %}
+                        <li>
+                            <b>{{ row[0] }}</b> <br>
+                            📝 {{ row[1] }} <br>
+                            ⭐ Rating: {{ row[2] }}/5
+                        </li><br>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="text-muted">Results will appear here...</p>
+        {% endif %}
+    </div>
+</div>
+</body>
+</html>
