@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Food Delivery Dashboard</title>
+
+<style>
+
+body{
+font-family:Arial;
+margin:0;
+background:#eef2f7;
+}
+
+/* Header */
+
+header{
+background:#2a5298;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+/* Dashboard */
+
+.dashboard{
+width:90%;
+margin:auto;
+margin-top:30px;
+}
+
+/* Cards Row */
+
+.cards{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+/* Card */
+
+.card{
+flex:1;
+min-width:200px;
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+text-align:center;
+}
+
+.card h3{
+margin:0;
+color:#333;
+}
+
+.card p{
+font-size:24px;
+font-weight:bold;
+color:#2a5298;
+margin-top:10px;
+}
+
+/* Table Section */
+
+.table-box{
+background:white;
+margin-top:30px;
+padding:20px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:10px;
+}
+
+th,td{
+padding:12px;
+border-bottom:1px solid #ddd;
+text-align:center;
+}
+
+th{
+background:#2a5298;
+color:white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h2>Food Delivery Analytics Dashboard</h2>
+</header>
+
+<div class="dashboard">
+
+<!-- Statistics Cards -->
+
+<div class="cards">
+
+<div class="card">
+<h3>Total Orders</h3>
+<p>120</p>
+</div>
+
+<div class="card">
+<h3>Average Delivery Time</h3>
+<p>32 min</p>
+</div>
+
+<div class="card">
+<h3>Active Restaurants</h3>
+<p>25</p>
+</div>
+
+<div class="card">
+<h3>Successful Deliveries</h3>
+<p>115</p>
+</div>
+
+</div>
+
+<!-- Prediction Table -->
+
+<div class="table-box">
+
+<h3>Recent Delivery Predictions</h3>
+
+<table>
+
+<tr>
+<th>Distance</th>
+<th>Traffic</th>
+<th>Order Time</th>
+<th>Predicted Delivery</th>
+</tr>
+
+<tr>
+<td>3 KM</td>
+<td>Medium</td>
+<td>12 PM</td>
+<td>25 Minutes</td>
+</tr>
+
+<tr>
+<td>5 KM</td>
+<td>High</td>
+<td>2 PM</td>
+<td>35 Minutes</td>
+</tr>
+
+<tr>
+<td>2 KM</td>
+<td>Low</td>
+<td>6 PM</td>
+<td>18 Minutes</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+</body>
+</html>
